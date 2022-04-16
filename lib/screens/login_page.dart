@@ -9,31 +9,69 @@ class LoginPage extends StatelessWidget {
       body: Align(
         alignment: Alignment.center,
         child: Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding: const EdgeInsets.symmetric(
+            horizontal: 30.0,
+            vertical: 12.0,
+          ),
           child: Column(
             children: [
               Expanded(
                 child: SizedBox(),
-                flex: 2,
               ),
               Expanded(
                 child: Image.asset('assets/images/login_image.jpg'),
-                flex: 8,
+                flex: 4,
               ),
               Expanded(
-                child: Text(
-                  "Login Page",
-                  style: GoogleFonts.spaceMono(
-                    color: Colors.blueAccent,
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Column(
+                  children: [
+                    Expanded(
+                      child: Center(
+                        child: Text(
+                          "Welcome!",
+                          style: GoogleFonts.lato(
+                            color: Colors.indigo[800],
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: InputDecoration(labelText: "Username"),
+                          ),
+                          TextFormField(
+                            decoration: InputDecoration(labelText: "Password"),
+                            obscureText: true,
+                          ),
+                        ],
+                      ),
+                      flex: 2,
+                    ),
+                    ElevatedButton(
+                      child: Text("Login"),
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.indigo[800],
+                        onPrimary: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        minimumSize: Size(125, 50),
+                        textStyle: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 flex: 4,
               ),
               Expanded(
                 child: SizedBox(),
-                flex: 2,
               ),
             ],
           ),
