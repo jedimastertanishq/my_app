@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'screens/login_page.dart';
 import 'screens/home_page.dart';
+import 'utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,10 +17,10 @@ class MyApp extends StatelessWidget {
     ]);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
+      initialRoute: MyRoutes.homeRoute,
       routes: {
-        '/login': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
+        MyRoutes.homeRoute: (context) => HomePage(),
       },
     );
   }
